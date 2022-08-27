@@ -7,7 +7,7 @@ class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['title']
+    search_fields = ['title, category']
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
