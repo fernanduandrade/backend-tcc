@@ -21,13 +21,15 @@ services:
       - db
 
   db:
-    image: postgres:13.8-bullseye
+    image: postgres:13-alpine3.16
     volumes:
       - dev-db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=supersecuritypassword
+    ports:
+      - "6543:5432"
 
 volumes:
   dev-db-data:
